@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/noteFragment2">
+
+    <fragment
+        android:id="@+id/noteFragment2"
+        android:name="com.rifaqat.notesmaker.fragments.NoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note">
+        <action
+            android:id="@+id/action_noteFragment2_to_saveOrUpdateFragment22"
+            app:destination="@id/saveOrUpdateFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveOrUpdateFragment2"
+        android:name="com.rifaqat.notesmaker.fragments.SaveOrUpdateFragment"
+        android:label="fragment_save_or_update"
+        tools:layout="@layout/fragment_save_or_update" >
+        <action
+            android:id="@+id/action_saveOrUpdateFragment2_to_noteFragment22"
+            app:destination="@id/noteFragment2" />
+
+        <argument android:name="note"
+            android:defaultValue="@null"
+            app:argType="com.rifaqat.notesmaker.models.NotesEntity"
+            app:nullable="true"/>
+    </fragment>
+
+</navigation>

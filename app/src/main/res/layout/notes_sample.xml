@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/itemSampleParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5mdp"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:elevation="@dimen/_5mdp"
+        android:focusable="true"
+        app:cardCornerRadius="@dimen/_10mdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2mdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/google_sans_medium"
+                android:paddingTop="@dimen/_7mdp"
+                android:text="@string/title"
+                android:textAlignment="textStart"
+                android:textSize="@dimen/_18font_mdp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.045"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/google_sans_medium"
+                android:maxLines="6"
+                android:paddingStart="0dp"
+                android:paddingTop="@dimen/_4mdp"
+                android:paddingEnd="@dimen/_3mdp"
+                android:paddingBottom="@dimen/_3mdp"
+                android:text="@string/some_text"
+                android:textSize="@dimen/_15font_mdp"
+                app:layout_constraintStart_toStartOf="@+id/title"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                tools:ignore="TextSizeCheck,VisualLintBounds" />
+
+            <!-- Third TextView - date -->
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_6mdp"
+                android:layout_marginBottom="@dimen/_3mdp"
+                android:drawablePadding="@dimen/_4mdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/google_sans_regular"
+                android:paddingStart="0dp"
+                android:paddingEnd="@dimen/_7mdp"
+                android:text="@string/dd_mm_yy"
+                android:textAlignment="textEnd"
+                android:textSize="@dimen/_12font_mdp"
+                app:drawableLeftCompat="@drawable/ic_outline_calendar_today_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/description"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/description"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="TextSizeCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

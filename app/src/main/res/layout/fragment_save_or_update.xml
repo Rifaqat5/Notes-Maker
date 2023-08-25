@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/noteContentFragmentParent"
+        tools:context=".fragments.SaveOrUpdateFragment">
+
+        <RelativeLayout
+            android:id="@+id/toolbarFragmentNoteContent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40mdp">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_11mdp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/back_button"
+                android:focusable="true"
+                android:paddingStart="0dp"
+                android:paddingTop="@dimen/_3mdp"
+                android:paddingEnd="@dimen/_3mdp"
+                android:paddingBottom="@dimen/_3mdp"
+                android:src="@drawable/ic_round_arrow_back_24"
+                tools:ignore="TouchTargetSizeCheck,RedundantDescriptionCheck" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/lastEdited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:fontFamily="@font/google_sans_regular"
+                android:paddingStart="@dimen/_10mdp"
+                android:paddingTop="@dimen/_6mdp"
+                android:paddingEnd="@dimen/_10mdp"
+                android:paddingBottom="@dimen/_4mdp"
+                android:text="@string/edited_on"
+                android:textAlignment="center"
+                android:textSize="@dimen/_10font_mdp"
+                android:textStyle="bold"
+                tools:ignore="RelativeOverlap" />
+
+            <ImageView
+                android:id="@+id/saveNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_11mdp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/save_note"
+                android:focusable="true"
+                android:paddingBottom="@dimen/_3mdp"
+                android:paddingTop="@dimen/_3mdp"
+                android:src="@drawable/ic_baseline_save_24"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottomBar"
+            android:layout_below="@id/toolbarFragmentNoteContent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scrollView"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/etTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_17mdp"
+                        android:layout_marginTop="@dimen/_8mdp"
+                        android:layout_marginEnd="@dimen/_17mdp"
+                        android:layout_marginBottom="@dimen/_2mdp"
+                        android:background="@null"
+                        android:fontFamily="@font/google_sans_medium"
+                        android:hint="@string/title"
+                        android:importantForAutofill="no"
+                        android:inputType="none"
+                        android:minHeight="48dp"
+                        android:textColorHint="#A1887F"
+                        android:textSize="@dimen/_18font_mdp"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                    <com.yahiaangelo.markdownedittext.MarkdownEditText
+                        android:id="@+id/etDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_17mdp"
+                        android:layout_marginEnd="@dimen/_17mdp"
+                        android:layout_marginBottom="@dimen/_8mdp"
+                        android:background="@null"
+                        android:fontFamily="@font/google_sans_regular"
+                        android:hint="@string/description"
+                        android:importantForAutofill="no"
+                        android:inputType="none"
+                        android:minHeight="48dp"
+                        android:textColorHint="#A1887F"
+                        android:textSize="@dimen/_15font_mdp"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabColorPick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_13mdp"
+                android:layout_gravity="bottom|end"
+                android:src="@drawable/ic_baseline_color_lens_24"
+                android:background="@color/purple"
+                android:contentDescription="@string/choose_color" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40mdp"
+            android:gravity="center_horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_6mdp"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <com.yahiaangelo.markdownedittext.MarkdownStylesBar
+                android:id="@+id/styleBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8mdp"
+                android:elevation="@dimen/_3mdp" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>
